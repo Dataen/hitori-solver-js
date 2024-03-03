@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Hello</title>
+<style>
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <canvas id="lerret" width="400px" height="400px"></canvas><br/><br/>
+            </td>
+            <td valign="top">
+                <h3>Hitori Solver</h3>
+                <b>Select puzzle</b><br/>
+                <select  style="font: 15px Verdana" id="mySel" onchange="changePuzzle(this)">
+                    <option value="1">Puzzle #1 (8x8)</option>
+                    <option value="2">Puzzle #2 (8x8)</option>
+                    <option value="3">Puzzle #3 (12x12)</option>
+                </select> 
+                <button style="font: 15px Verdana" onclick="solve()">Solve</button><br>
+                <hr>
+                <span style="font: 15px Verdana"><b>Browse Moves</b></span><br/>
+                <button style="font: 15px Verdana" onclick="tapLeftAll()">|<</button><button style="font: 15px Verdana" onclick="tapLeft()">< </button>  <span style="font: 15px Verdana" id="viewState">0</span>  <button style="font: 15px Verdana" onclick="tapRight()"> ></button><button style="font: 15px Verdana" onclick="tapRightAll()">>|</button>
+                <hr>
+                <span style="font: 15px Verdana"><b>Animation</b></span><br/>
+                <select  style="font: 15px Verdana" id="animSel" onchange="changeSpeed()">
+                    <option value="1">0.25 step/sec</option>
+                    <option value="2">0.50 step/sec</option>
+                    <option value="3">1 step/sec</option>
+                    <option value="4">2 step/sec</option>
+                    <option value="5">5 step/sec</option>
+                    <option value="6">8 step/sec</option>
+                    <option value="7">10 step/sec</option>
+                </select><br/><br/>
+                <button style="font: 15px Verdana" onclick="continueAnimate()">Animate</button> <button style="font: 15px Verdana" onclick="stopAnimation()">Stop</button> <br/><br/>
+                <button style="font: 15px Verdana" onclick="animateSolution()">Animate from start</button>
+                <hr>
+                <span style="font: 15px Verdana"><b>Size</b></span><br/>
+                <button onclick="lowerSize()">-</button> <span id="feltSize">40</span> <button onclick="higherSize()">+</button>
+                <br/>
+            </td>
+        </tr>
+    </table>
+    <script src="hitori.js"></script>
+</body>
+</html>
